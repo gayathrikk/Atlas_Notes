@@ -121,6 +121,17 @@ public class Atlas_notes {
 			System.out.println("The Draw icon is not clicked");
 		}
 		try {
+						WebDriverWait wait = new WebDriverWait(driver, 30);
+						WebElement unlock = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//button[text()='Unlock']")));
+						unlock.click();
+						System.out.println("--------------------------*****************-----------------------");
+						System.out.println("The Unlock button is clicked");
+					} catch (Exception e) {
+						System.out.println("--------------------------*****************-----------------------");
+						System.out.println("The Unlock button is not clicked");
+					}
+
+		try {
 			WebDriverWait wait = new WebDriverWait(driver, 50);
 			WebElement Note = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//img[@src='/viewer/assets/images/colorsvg/comments.svg']")));
 			Note.click();
